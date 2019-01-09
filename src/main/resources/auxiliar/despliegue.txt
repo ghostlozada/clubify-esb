@@ -1,0 +1,4 @@
+- Tutorial
+ https://github.com/eugenp/tutorials/blob/master/spring-boot-bootstrap
+- Arrancar microservicio
+C:\GIT-WS-FACTELECT\Spring test\tutorial02>mvn spring-boot:run -Dgib.enabled=false
