@@ -67,4 +67,12 @@ public class DemoEntidadPK implements Serializable {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String toString() {
+        return "DemoEntidadPK [licencia=" + this.licencia + ", codigo=" + this.codigo + "]";
+    }
 }

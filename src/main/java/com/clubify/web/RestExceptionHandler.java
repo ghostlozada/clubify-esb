@@ -1,5 +1,6 @@
 package com.clubify.web;
 
+import javax.validation.ConstraintDeclarationException;
 import javax.validation.ConstraintViolationException;
 
 import org.springframework.dao.DataIntegrityViolationException;
@@ -35,9 +36,10 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
      * @param request
      * @return
      */
-    @ExceptionHandler({ EntidadIdMismatchException.class, ConstraintViolationException.class,
-            DataIntegrityViolationException.class })
+    @ExceptionHandler({ EntidadIdMismatchException.class, org.hibernate.exception.ConstraintViolationException.class,
+            ConstraintViolationException.class, DataIntegrityViolationException.class, ConstraintDeclarationException.class })
     public ResponseEntity<Object> handleBadRequest(Exception ex, WebRequest request) {
-        return handleExceptionInternal(ex, ex.getLocalizedMessage(), new HttpHeaders(), HttpStatus.BAD_REQUEST, request);
+        return handleExceptionInternal(ex, ex.getClass().getName() + ":" + ex.getLocalizedMessage(), new HttpHeaders(),
+                HttpStatus.BAD_REQUEST, request);
     }
 }
