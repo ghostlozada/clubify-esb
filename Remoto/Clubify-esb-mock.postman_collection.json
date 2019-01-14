@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "0a13087f-4593-43ee-ad24-76e590dfd89a",
+		"name": "CLubify-json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "entidaddemo-crear",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"pk\": {\n        \"licencia\": 1,\n        \"codigo\": \"C008\"\n    },\n    \"nombre\": \"Bodega1\",\n    \"estado\": \"ACTIVO\",\n    \"valor\": 1500.22,\n    \"fechaRegistro\": \"2019-01-09T16:27:26.849\"\n}"
+				},
+				"url": {
+					"raw": "http://glozada:8080/clubify-esb/restapi/tablademo",
+					"protocol": "http",
+					"host": [
+						"glozada"
+					],
+					"port": "8080",
+					"path": [
+						"clubify-esb",
+						"restapi",
+						"tablademo"
+					]
+				},
+				"description": "evento webhook: message\ntipo mensaje: texto"
+			},
+			"response": []
+		},
+		{
+			"name": "entidaddemo-todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codBot\":\"gestorbe\",\r\n    \"texto\": \"Puedo consultar el saldo de mi cuenta\",\r\n    \"usuario\": \"glozada\"\r\n}"
+				},
+				"url": {
+					"raw": "http://glozada:8080/clubify-esb/restapi/tablademo",
+					"protocol": "http",
+					"host": [
+						"glozada"
+					],
+					"port": "8080",
+					"path": [
+						"clubify-esb",
+						"restapi",
+						"tablademo"
+					]
+				},
+				"description": "evento webhook: message\ntipo mensaje: texto"
+			},
+			"response": []
+		},
+		{
+			"name": "entidaddemo-porLicencia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codBot\":\"gestorbe\",\r\n    \"texto\": \"Puedo consultar el saldo de mi cuenta\",\r\n    \"usuario\": \"glozada\"\r\n}"
+				},
+				"url": {
+					"raw": "http://glozada:8080/clubify-esb/restapi/tablademo/licencia/2",
+					"protocol": "http",
+					"host": [
+						"glozada"
+					],
+					"port": "8080",
+					"path": [
+						"clubify-esb",
+						"restapi",
+						"tablademo",
+						"licencia",
+						"2"
+					]
+				},
+				"description": "evento webhook: message\ntipo mensaje: texto"
+			},
+			"response": []
+		},
+		{
+			"name": "entidaddemo-porCodigo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codBot\":\"gestorbe\",\r\n    \"texto\": \"Puedo consultar el saldo de mi cuenta\",\r\n    \"usuario\": \"glozada\"\r\n}"
+				},
+				"url": {
+					"raw": "http://glozada:8080/clubify-esb/restapi/tablademo/codigo/C003",
+					"protocol": "http",
+					"host": [
+						"glozada"
+					],
+					"port": "8080",
+					"path": [
+						"clubify-esb",
+						"restapi",
+						"tablademo",
+						"codigo",
+						"C003"
+					]
+				},
+				"description": "evento webhook: message\ntipo mensaje: texto"
+			},
+			"response": []
+		},
+		{
+			"name": "entidaddemo-delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://glozada:8090/clubify-esb/restapi/tablademo/1/C007",
+					"protocol": "http",
+					"host": [
+						"glozada"
+					],
+					"port": "8090",
+					"path": [
+						"clubify-esb",
+						"restapi",
+						"tablademo",
+						"1",
+						"C007"
+					]
+				},
+				"description": "evento webhook: message\ntipo mensaje: texto"
+			},
+			"response": []
+		},
+		{
+			"name": "entidaddemo-leido",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codBot\":\"gestorbe\",\r\n    \"texto\": \"Puedo consultar el saldo de mi cuenta\",\r\n    \"usuario\": \"glozada\"\r\n}"
+				},
+				"url": {
+					"raw": "http://glozada:8080/clubify-esb/restapi/tablademo/leido/1/C003",
+					"protocol": "http",
+					"host": [
+						"glozada"
+					],
+					"port": "8080",
+					"path": [
+						"clubify-esb",
+						"restapi",
+						"tablademo",
+						"leido",
+						"1",
+						"C003"
+					]
+				},
+				"description": "evento webhook: message\ntipo mensaje: texto"
+			},
+			"response": []
+		},
+		{
+			"name": "entidaddemo-actualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codBot\":\"gestorbe\",\r\n    \"texto\": \"Puedo consultar el saldo de mi cuenta\",\r\n    \"usuario\": \"glozada\"\r\n}"
+				},
+				"url": {
+					"raw": "http://glozada:8090/clubify-esb/restapi/tablademo/leido/1/C002",
+					"protocol": "http",
+					"host": [
+						"glozada"
+					],
+					"port": "8090",
+					"path": [
+						"clubify-esb",
+						"restapi",
+						"tablademo",
+						"leido",
+						"1",
+						"C002"
+					]
+				},
+				"description": "evento webhook: message\ntipo mensaje: texto"
+			},
+			"response": []
+		}
+	]
+}
