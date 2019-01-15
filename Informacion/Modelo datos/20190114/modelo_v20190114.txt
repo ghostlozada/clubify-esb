@@ -1,0 +1,23 @@
+create table COL_URL_BANNER
+(cod_url     number,
+url         varchar2(1000),
+descripcion varchar2(4000),
+constraint pk_URL_BANNER primary key (cod_url))
+ 
+ create table COL_NOTICIAS_HOME
+(cod_noticia    number,
+  titulo         varchar2(200) not null,
+  detalle        varchar2(4000) not null,
+  url_imagen     varchar2(1000),
+constraint pk_col_noticias_home primary key (cod_noticia))
+// TODO: GLOZADA Hace falta estado, relevancia/orden, fecha_activacion, fecha_caducidad
+ 
+create table col_notificacion
+(cod_notificacion    number,
+destinatario        varchar2(400) not null,
+id_telefono         varchar2(200) not null,
+titulo              varchar2(200) not null,
+detalle             varchar2(4000) not null,
+url_imagen     varchar2(1000),
+constraint pk_col_notificacion primary key (cod_notificacion))
+// TODO: GLOZADA Hace falta estado, relevancia/orden, fecha_activacion, fecha_caducidad, fecha_leido

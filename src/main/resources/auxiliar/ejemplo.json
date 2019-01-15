@@ -1,0 +1,32 @@
+{
+	"news": [
+		{
+			"id": "2",
+			"titulo": "Rayos X Mi asombroso cuerpo",
+			"fecha": "14/01/2019",
+			"descripcion": "Quieres ver la radiografía de un cráneo y ver ¿cómo el corazón bombea la sangreen todo el cuerpo?",
+			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/news%2Fnew2.jpg?alt=media&token=13a3d5fb-51c3-42b8-8b8f-d72404f7e708"
+		},
+		{
+			"id": "5",
+			"titulo": "Cuentos Monstruosos - The Monsters",
+			"fecha": "14/01/2019",
+			"descripcion": "Fantástica colección de monsters university- disney pixar- cuentos mostruosos. Los cuentos basados en la historia de la película monsters university",
+			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/news%2Fnew5.jpg?alt=media&token=8c7eacf7-474d-48fd-927d-f87a3366bd72"
+		},
+		{
+			"id": "4",
+			"titulo": "Láminas Avengers",
+			"fecha": "14/01/2019",
+			"descripcion": "Avengers, cuando un héroe no es suficiente, una apasionante historia de cómo se formó el grupo de los vengadores. Contiene cinco grandes esténciles.",
+			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/news%2Fnew4.jpg?alt=media&token=b41c9141-d933-4bf4-801a-8f78c24a6019"
+		},
+		{
+			"id": "3",
+			"titulo": "Rompecabezas - Aprendo en casa Colores y Palabras",
+			"fecha": "14/01/2019",
+			"descripcion": "Este pack, con puzles de piezas grandes, gruesas y fáciles de manipular, estimulará la atención de los más pequeños",
+			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/news%2Fnew3.jpg?alt=media&token=48936cb9-d7c0-4613-b2c7-735ef8763f73"
+		}
+	]
+}
