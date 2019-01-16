@@ -52,6 +52,7 @@ public class NotificacionRestful {
      * @param id
      */
     @PutMapping("/leido/{id}")
+    //// @ResponseStatus(HttpStatus.NO_CONTENT)
     public void actualizarEstadoLeido(@PathVariable String id) {
         Notificacion registro = this.notificacionRepository.findById(Long.valueOf(id)).orElseThrow(EntidadNotFoundException::new);
         registro.setEstado("2");
@@ -64,6 +65,7 @@ public class NotificacionRestful {
      */
     // TODO: GLOZADA Temporalmente para cambiar al estado=1 (PENDIENTE)
     @PutMapping("/pendiente/{id}")
+    //// @ResponseStatus(HttpStatus.NO_CONTENT)
     public void actualizarEstadoPendiente(@PathVariable String id) {
         Notificacion registro = this.notificacionRepository.findById(Long.valueOf(id)).orElseThrow(EntidadNotFoundException::new);
         registro.setEstado("1");

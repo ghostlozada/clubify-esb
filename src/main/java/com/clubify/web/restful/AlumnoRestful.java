@@ -30,6 +30,7 @@ public class AlumnoRestful {
      * @param tokenTelefono
      */
     @PutMapping("/idtelefono/{email}/{tokenTelefono}")
+    //// @ResponseStatus(HttpStatus.NO_CONTENT)
     public void actualizarIdTelefono(@PathVariable String email, @PathVariable String tokenTelefono) {
         if (StringUtils.isBlank(email)) {
             throw new EntidadIdMismatchException("No existe un alumno relacionado al correo: nulo");
@@ -51,6 +52,7 @@ public class AlumnoRestful {
      */
     // TODO: GLOZADA Temporalmente para cambiar al estado=1 (PENDIENTE)
     @PutMapping("/borraridtelefono/{email}")
+    //// @ResponseStatus(HttpStatus.NO_CONTENT)
     public void borrarIdTelefono(@PathVariable String email) {
         if (StringUtils.isBlank(email)) {
             throw new EntidadIdMismatchException("No existe un alumno relacionado al correo: nulo");

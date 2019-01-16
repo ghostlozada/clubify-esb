@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.clubify.persistence.modelo.Noticia;
 import com.clubify.persistence.repo.NoticiaRepository;
+import com.clubify.web.dto.restful.DetalleNoticiaDTO;
 import com.clubify.web.dto.restful.NoticiasDTO;
 import com.clubify.web.exception.EntidadNotFoundException;
 
@@ -36,8 +37,8 @@ public class NoticiaRestful {
      * @return
      */
     @GetMapping("/{id}")
-    public NoticiasDTO buscarPorId(@PathVariable String id) {
+    public DetalleNoticiaDTO buscarPorId(@PathVariable String id) {
         Noticia res = this.noticiaRepository.findById(Long.valueOf(id)).orElseThrow(EntidadNotFoundException::new);
-        return new NoticiasDTO(res);
+        return new DetalleNoticiaDTO(res);
     }
 }
