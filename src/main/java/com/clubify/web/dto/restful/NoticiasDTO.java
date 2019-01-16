@@ -35,17 +35,6 @@ public class NoticiasDTO implements Serializable {
     }
 
     /**
-     * Crea una nueva instancia de la clase NoticiasDTO
-     * @param noticia
-     */
-    public NoticiasDTO(Noticia noticia) {
-        super();
-        if (noticia != null) {
-            this.noticias.add(noticia);
-        }
-    }
-
-    /**
      * Obtiene el atributo de clase: "noticias"
      * @return el/la noticias
      */
