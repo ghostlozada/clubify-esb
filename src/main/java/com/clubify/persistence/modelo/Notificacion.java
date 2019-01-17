@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 @JsonInclude(Include.NON_NULL)
 @Entity
-@Table(name = "COL_NOTIFICACION")
+@Table(name = "COL_V_NOTIFICACION")
 public class Notificacion implements Serializable {
     /** Id por JVM. */
     private static final long serialVersionUID = -4830012568928647677L;
