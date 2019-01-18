@@ -16,6 +16,6 @@ public interface NoticiaRepository extends CrudRepository<Noticia, Long> {
      * Todas estado=1 ordenadas por fecha descendente.
      * @return
      */
-    @Query("SELECT u FROM Noticia u WHERE u.estado='1' ORDER BY u.fecha desc")
+    @Query("SELECT u FROM Noticia u ORDER BY u.fecha desc")
     List<Noticia> buscarActivas();
 }

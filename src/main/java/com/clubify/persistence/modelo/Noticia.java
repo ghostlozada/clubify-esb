@@ -10,7 +10,6 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -19,7 +18,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Entidad relacionada a la tabla 'COL_NOTICIAS_HOME'
  * @author Gux Lozada
  */
-@JsonInclude(Include.NON_NULL)
+@JsonInclude(Include.ALWAYS)
 @Entity
 @Table(name = "COL_NOTICIAS_HOME")
 public class Noticia implements Serializable {
@@ -37,16 +36,21 @@ public class Noticia implements Serializable {
     @JsonProperty("descripcion")
     @Column(name = "DETALLE", nullable = false, length = 4000)
     private String detalle;
+    /** tipo varchar2(1) not null. */
+    @JsonProperty("tipoMultimedia")
+    @Column
+    private String tipo;
     /** url_imagen varchar2(1000). */
-    @JsonProperty("imageUrl")
+    @JsonProperty("imagenUrl")
     @Column(name = "URL_IMAGEN", length = 1000)
     private String urlImagen;
+    /** url_video varchar2(1000). */
+    @JsonProperty("videoUrl")
+    @Column(name = "URL_VIDEO", length = 1000)
+    private String urlVideo;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     @Column
     private LocalDateTime fecha;
-    @JsonIgnore
-    @Column
-    private String estado;
     @JsonProperty("short")
     @Transient
     private String tags = "Tags : ";
@@ -123,6 +127,22 @@ public class Noticia implements Serializable {
     }
 
     /**
+     * Obtiene el atributo de clase: "urlVideo"
+     * @return el/la urlVideo
+     */
+    public String getUrlVideo() {
+        return this.urlVideo;
+    }
+
+    /**
+     * Asigna valor al atributo de clase: "urlVideo"
+     * @param urlVideo el/la urlVideo para asignar el valor
+     */
+    public void setUrlVideo(String urlVideo) {
+        this.urlVideo = urlVideo;
+    }
+
+    /**
      * Obtiene el atributo de clase: "fecha"
      * @return el/la fecha
      */
@@ -139,19 +159,19 @@ public class Noticia implements Serializable {
     }
 
     /**
-     * Obtiene el atributo de clase: "estado"
-     * @return el/la estado
+     * Obtiene el atributo de clase: "tipo"
+     * @return el/la tipo
      */
-    public String getEstado() {
-        return this.estado;
+    public String getTipo() {
+        return this.tipo;
     }
 
     /**
-     * Asigna valor al atributo de clase: "estado"
-     * @param estado el/la estado para asignar el valor
+     * Asigna valor al atributo de clase: "tipo"
+     * @param tipo el/la tipo para asignar el valor
      */
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     /**
