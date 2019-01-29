@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.clubify.persistence.modelo.Notificacion;
+import com.clubify.persistence.modelo.NotificacionVista;
 
 /**
  * @author Gux Lozada
@@ -12,7 +12,7 @@ import com.clubify.persistence.modelo.Notificacion;
 public class NotificacionesDTO implements Serializable {
     /** Id por JVM. */
     private static final long serialVersionUID = 630925220408133984L;
-    private List<Notificacion> notificaciones = new ArrayList<>();
+    private List<NotificacionVista> notificaciones = new ArrayList<>();
 
     /**
      * Crea una nueva instancia de la clase NotificacionesDTO
@@ -25,7 +25,7 @@ public class NotificacionesDTO implements Serializable {
      * Crea una nueva instancia de la clase NotificacionesDTO
      * @param notificaciones
      */
-    public NotificacionesDTO(List<Notificacion> notificaciones) {
+    public NotificacionesDTO(List<NotificacionVista> notificaciones) {
         super();
         if (notificaciones != null) {
             this.notificaciones.addAll(notificaciones);
@@ -36,7 +36,7 @@ public class NotificacionesDTO implements Serializable {
      * Obtiene el atributo de clase: "notificaciones"
      * @return el/la notificaciones
      */
-    public List<Notificacion> getNotificaciones() {
+    public List<NotificacionVista> getNotificaciones() {
         return this.notificaciones;
     }
 
@@ -44,7 +44,7 @@ public class NotificacionesDTO implements Serializable {
      * Asigna valor al atributo de clase: "notificaciones"
      * @param notificaciones el/la notificaciones para asignar el valor
      */
-    public void setNotificaciones(List<Notificacion> notificaciones) {
+    public void setNotificaciones(List<NotificacionVista> notificaciones) {
         this.notificaciones = notificaciones;
     }
 }

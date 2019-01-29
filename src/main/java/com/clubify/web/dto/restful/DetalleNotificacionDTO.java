@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.clubify.persistence.modelo.Notificacion;
+import com.clubify.persistence.modelo.NotificacionVista;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -14,7 +14,7 @@ public class DetalleNotificacionDTO implements Serializable {
     /** Id por JVM. */
     private static final long serialVersionUID = -6502944315885912924L;
     @JsonProperty("DetalleNotificaciones")
-    private List<Notificacion> notificaciones;
+    private List<NotificacionVista> notificaciones;
 
     /**
      * Crea una nueva instancia de la clase DetalleNotificacionDTO
@@ -27,10 +27,10 @@ public class DetalleNotificacionDTO implements Serializable {
      * Crea una nueva instancia de la clase DetalleNotificacionDTO
      * @param notificacion
      */
-    public DetalleNotificacionDTO(Notificacion notificacion) {
+    public DetalleNotificacionDTO(NotificacionVista notificacion) {
         super();
         if (notificacion != null) {
-            this.notificaciones = new ArrayList<Notificacion>();
+            this.notificaciones = new ArrayList<>();
             this.notificaciones.add(notificacion);
         }
     }
@@ -39,7 +39,7 @@ public class DetalleNotificacionDTO implements Serializable {
      * Obtiene el atributo de clase: "notificaciones"
      * @return el/la notificaciones
      */
-    public List<Notificacion> getNotificaciones() {
+    public List<NotificacionVista> getNotificaciones() {
         return this.notificaciones;
     }
 
@@ -47,7 +47,7 @@ public class DetalleNotificacionDTO implements Serializable {
      * Asigna valor al atributo de clase: "notificaciones"
      * @param notificaciones el/la notificaciones para asignar el valor
      */
-    public void setNotificaciones(List<Notificacion> notificaciones) {
+    public void setNotificaciones(List<NotificacionVista> notificaciones) {
         this.notificaciones = notificaciones;
     }
 }

@@ -13,9 +13,9 @@ import com.clubify.persistence.modelo.Noticia;
  */
 public interface NoticiaRepository extends CrudRepository<Noticia, Long> {
     /**
-     * Todas estado=1 ordenadas por fecha descendente.
+     * Todas estado=1 ordenadas por id.
      * @return
      */
-    @Query("SELECT u FROM Noticia u ORDER BY u.fecha desc")
+    @Query("SELECT u FROM Noticia u ORDER BY u.id")
     List<Noticia> buscarActivas();
 }

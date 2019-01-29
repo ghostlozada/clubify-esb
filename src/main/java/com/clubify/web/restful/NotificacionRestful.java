@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.clubify.persistence.modelo.Notificacion;
-import com.clubify.persistence.repo.NotificacionRepository;
+import com.clubify.persistence.modelo.NotificacionVista;
+import com.clubify.persistence.repo.NotificacionVistaRepository;
 import com.clubify.web.dto.restful.DetalleNotificacionDTO;
 import com.clubify.web.dto.restful.NotificacionesDTO;
 import com.clubify.web.exception.EntidadNotFoundException;
@@ -21,7 +21,7 @@ import com.clubify.web.exception.EntidadNotFoundException;
 @RequestMapping("/restapi/notificaciones")
 public class NotificacionRestful {
     @Autowired
-    private NotificacionRepository notificacionRepository;
+    private NotificacionVistaRepository notificacionVistaRepository;
 
     /**
      * Obtiene las notificaciones en estado=1(PENDIENTE) por destinatario (correo alumno).
@@ -30,7 +30,7 @@ public class NotificacionRestful {
      */
     @GetMapping("/correo/{destinatario}")
     public NotificacionesDTO buscarPorDestinatario(@PathVariable String destinatario) {
-        return new NotificacionesDTO(this.notificacionRepository.buscarPorDestinatario(destinatario));
+        return new NotificacionesDTO(this.notificacionVistaRepository.buscarPorDestinatario(destinatario));
     }
 
     /**
@@ -40,7 +40,8 @@ public class NotificacionRestful {
      */
     @GetMapping("/id/{id}")
     public DetalleNotificacionDTO buscarPorId(@PathVariable String id) {
-        Notificacion res = this.notificacionRepository.findById(Long.valueOf(id)).orElseThrow(EntidadNotFoundException::new);
+        NotificacionVista res = this.notificacionVistaRepository.findById(Long.valueOf(id))
+                .orElseThrow(EntidadNotFoundException::new);
         // TODO: GLOZADA Se asigna nulo porque en la respuesta este campo no es requerido y no
         // debe ser retornado en el Json
         res.setEstado(null);
@@ -54,9 +55,10 @@ public class NotificacionRestful {
     @PutMapping("/leido/{id}")
     //// @ResponseStatus(HttpStatus.NO_CONTENT)
     public void actualizarEstadoLeido(@PathVariable String id) {
-        Notificacion registro = this.notificacionRepository.findById(Long.valueOf(id)).orElseThrow(EntidadNotFoundException::new);
+        NotificacionVista registro = this.notificacionVistaRepository.findById(Long.valueOf(id))
+                .orElseThrow(EntidadNotFoundException::new);
         registro.setEstado("2");
-        this.notificacionRepository.save(registro);
+        this.notificacionVistaRepository.save(registro);
     }
 
     /**
@@ -67,8 +69,9 @@ public class NotificacionRestful {
     @PutMapping("/pendiente/{id}")
     //// @ResponseStatus(HttpStatus.NO_CONTENT)
     public void actualizarEstadoPendiente(@PathVariable String id) {
-        Notificacion registro = this.notificacionRepository.findById(Long.valueOf(id)).orElseThrow(EntidadNotFoundException::new);
+        NotificacionVista registro = this.notificacionVistaRepository.findById(Long.valueOf(id))
+                .orElseThrow(EntidadNotFoundException::new);
         registro.setEstado("1");
-        this.notificacionRepository.save(registro);
+        this.notificacionVistaRepository.save(registro);
     }
 }

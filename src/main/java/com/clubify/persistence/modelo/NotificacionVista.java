@@ -8,40 +8,56 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
- * Entidad relacionada a la tabla 'COL_NOTIFICACION'
+ * Entidad relacionada a la tabla 'COL_V_NOTIFICACION'
  * @author Gux Lozada
  */
+@JsonInclude(Include.NON_NULL)
 @Entity
-@Table(name = "COL_NOTIFICACION")
-public class Notificacion implements Serializable {
+@Table(name = "COL_V_NOTIFICACION")
+public class NotificacionVista implements Serializable {
     /** Id por JVM. */
-    private static final long serialVersionUID = -4830012568928647677L;
+    private static final long serialVersionUID = -7276886388959878912L;
     /** cod_notificacion number. */
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
     @Id
     @Column(name = "COD_NOTIFICACION", nullable = false)
     private Long id;
+    /** destinatario varchar2(400) not null. */
+    @JsonIgnore
     @Column(nullable = false, length = 400)
     private String destinatario;
+    /** id_telefono varchar2(200) not null. */
+    @JsonIgnore
     @Column(name = "ID_TELEFONO", nullable = false, length = 200)
     private String idTelefono;
+    /** titulo varchar2(200) not null. */
     @Column(nullable = false, length = 200)
     private String titulo;
+    /** detalle varchar2(4000) not null. */
+    @JsonProperty("descripcion")
     @Column(name = "DETALLE", nullable = false, length = 4000)
     private String detalle;
+    /** url_imagen varchar2(1000). */
+    @JsonProperty("imageUrl")
     @Column(name = "URL_IMAGEN", length = 1000)
     private String urlImagen;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     @Column
     private LocalDateTime fecha;
     @Column
     private String estado;
-    @Column
-    private String enviado;
 
     /**
      * Crea una nueva instancia de la clase Notificacion
      */
-    public Notificacion() {
+    public NotificacionVista() {
         super();
     }
 
@@ -171,21 +187,5 @@ public class Notificacion implements Serializable {
      */
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    /**
-     * Obtiene el atributo de clase: "enviado"
-     * @return el/la enviado
-     */
-    public String getEnviado() {
-        return this.enviado;
-    }
-
-    /**
-     * Asigna valor al atributo de clase: "enviado"
-     * @param enviado el/la enviado para asignar el valor
-     */
-    public void setEnviado(String enviado) {
-        this.enviado = enviado;
     }
 }

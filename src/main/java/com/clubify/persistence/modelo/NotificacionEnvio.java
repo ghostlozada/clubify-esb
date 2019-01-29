@@ -9,56 +9,51 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * Entidad relacionada a la tabla 'COL_NOTIFICACION'
+ * Entidad relacionada a la tabla 'col_v_notificacion_envio'
  * @author Gux Lozada
  */
 @Entity
-@Table(name = "COL_NOTIFICACION")
-public class Notificacion implements Serializable {
+@Table(name = "col_v_notificacion_envio")
+public class NotificacionEnvio implements Serializable {
     /** Id por JVM. */
-    private static final long serialVersionUID = -4830012568928647677L;
-    /** cod_notificacion number. */
+    private static final long serialVersionUID = 4561848583774148387L;
     @Id
-    @Column(name = "COD_NOTIFICACION", nullable = false)
-    private Long id;
-    @Column(nullable = false, length = 400)
+    @Column(name = "COD_NOTIFICACION")
+    private Long codNotificacion;
+    @Column
     private String destinatario;
-    @Column(name = "ID_TELEFONO", nullable = false, length = 200)
+    @Column(name = "ID_TELEFONO")
     private String idTelefono;
-    @Column(nullable = false, length = 200)
+    @Column
     private String titulo;
-    @Column(name = "DETALLE", nullable = false, length = 4000)
+    @Column
     private String detalle;
-    @Column(name = "URL_IMAGEN", length = 1000)
+    @Column(name = "URL_IMAGEN")
     private String urlImagen;
     @Column
     private LocalDateTime fecha;
-    @Column
-    private String estado;
-    @Column
-    private String enviado;
 
     /**
      * Crea una nueva instancia de la clase Notificacion
      */
-    public Notificacion() {
+    public NotificacionEnvio() {
         super();
     }
 
     /**
-     * Obtiene el atributo de clase: "id"
-     * @return el/la id
+     * Obtiene el atributo de clase: "codNotificacion"
+     * @return el/la codNotificacion
      */
-    public Long getId() {
-        return this.id;
+    public Long getCodNotificacion() {
+        return this.codNotificacion;
     }
 
     /**
-     * Asigna valor al atributo de clase: "id"
-     * @param id el/la id para asignar el valor
+     * Asigna valor al atributo de clase: "codNotificacion"
+     * @param codNotificacion el/la codNotificacion para asignar el valor
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setCodNotificacion(Long codNotificacion) {
+        this.codNotificacion = codNotificacion;
     }
 
     /**
@@ -158,34 +153,11 @@ public class Notificacion implements Serializable {
     }
 
     /**
-     * Obtiene el atributo de clase: "estado"
-     * @return el/la estado
+     * {@inheritDoc}
      */
-    public String getEstado() {
-        return this.estado;
-    }
-
-    /**
-     * Asigna valor al atributo de clase: "estado"
-     * @param estado el/la estado para asignar el valor
-     */
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    /**
-     * Obtiene el atributo de clase: "enviado"
-     * @return el/la enviado
-     */
-    public String getEnviado() {
-        return this.enviado;
-    }
-
-    /**
-     * Asigna valor al atributo de clase: "enviado"
-     * @param enviado el/la enviado para asignar el valor
-     */
-    public void setEnviado(String enviado) {
-        this.enviado = enviado;
+    @Override
+    public String toString() {
+        return "NotificacionEnvio [codNotificacion=" + this.codNotificacion + ", destinatario=" + this.destinatario
+                + ", idTelefono=" + this.idTelefono + ", titulo=" + this.titulo + "]";
     }
 }
