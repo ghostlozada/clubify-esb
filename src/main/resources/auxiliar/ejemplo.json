@@ -1,68 +1,9 @@
 {
-	"notificaciones": [
-		{
-			"id": "131",
-			"titulo": "Hola!! GUSTAVO, Bienvenido al Club",
-			"fecha": "24/01/2019",
-			"estado": "1",
-			"descripcion": "GUSTAVO,\r\nClubify te da la Bienvenida a la plataforma Intercolegial mas cool del Ecuador.\r\n\r\nGracias por tu Registro.",
-			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/Imagenes%20Notificaciones%2FHola.png?alt=media&token=ef6897ba-a0ba-446c-abc0-257ceee3e6f0"
-		},
-		{
-			"id": "125",
-			"titulo": "GUSTAVO, Clubify agradece tu Pedido.",
-			"fecha": "23/01/2019",
-			"estado": "1",
-			"descripcion": "Estimado DENNYS, su pedido se ha recibido exitosamente, te recordamos que debes cancelar el valor de tu pedido previa la fecha de entrega.\r\nCLUBIFY.EC",
-			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/Imagenes%20Notificaciones%2FPor%20Omisi%C3%B3n%20Mensajes.png?alt=media&token=9594b8bc-22c0-4334-af59-05cef7428148"
-		},
-		{
-			"id": "116",
-			"titulo": "GUSTAVO, Clubify agradece tu Pedido.",
-			"fecha": "23/01/2019",
-			"estado": "1",
-			"descripcion": "Estimado DENNYS, su pedido se ha recibido exitosamente, te recordamos que debes cancelar el valor de tu pedido previa la fecha de entrega.\r\nCLUBIFY.EC",
-			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/Imagenes%20Notificaciones%2FPor%20Omisi%C3%B3n%20Mensajes.png?alt=media&token=9594b8bc-22c0-4334-af59-05cef7428148"
-		},
-		{
-			"id": "114",
-			"titulo": "GUSTAVO, Clubify agradece tu Pedido.",
-			"fecha": "23/01/2019",
-			"estado": "1",
-			"descripcion": "Estimado DENNYS, su pedido se ha recibido exitosamente, te recordamos que debes cancelar el valor de tu pedido previa la fecha de entrega.\r\nCLUBIFY.EC",
-			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/Imagenes%20Notificaciones%2FPor%20Omisi%C3%B3n%20Mensajes.png?alt=media&token=9594b8bc-22c0-4334-af59-05cef7428148"
-		},
-		{
-			"id": "113",
-			"titulo": "GUSTAVO, Clubify agradece tu Pedido.",
-			"fecha": "23/01/2019",
-			"estado": "1",
-			"descripcion": "Estimado DENNYS, su pedido se ha recibido exitosamente, te recordamos que debes cancelar el valor de tu pedido previa la fecha de entrega.\r\nCLUBIFY.EC",
-			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/Imagenes%20Notificaciones%2FPor%20Omisi%C3%B3n%20Mensajes.png?alt=media&token=9594b8bc-22c0-4334-af59-05cef7428148"
-		},
-		{
-			"id": "111",
-			"titulo": "GUSTAVO, Clubify agradece tu Pedido.",
-			"fecha": "23/01/2019",
-			"estado": "1",
-			"descripcion": "Estimado DENNYS, su pedido se ha recibido exitosamente, te recordamos que debes cancelar el valor de tu pedido previa la fecha de entrega.\r\nCLUBIFY.EC",
-			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/Imagenes%20Notificaciones%2FPor%20Omisi%C3%B3n%20Mensajes.png?alt=media&token=9594b8bc-22c0-4334-af59-05cef7428148"
-		},
-		{
-			"id": "92",
-			"titulo": "GUSTAVO, Clubify agradece tu Pedido.",
-			"fecha": "22/01/2019",
-			"estado": "1",
-			"descripcion": "Estimado DENNYS, su pedido se ha recibido exitosamente, te recordamos que debes cancelar el valor de tu pedido previa la fecha de entrega.\r\nCLUBIFY.EC",
-			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/Imagenes%20Notificaciones%2FPor%20Omisi%C3%B3n%20Mensajes.png?alt=media&token=9594b8bc-22c0-4334-af59-05cef7428148"
-		},
-		{
-			"id": "77",
-			"titulo": "GUSTAVO Clubify te agradece por la Participación en la Beta",
-			"fecha": "22/01/2019",
-			"estado": "1",
-			"descripcion": "Clubify, en su propósito de mejorar y estar a la vanguardia lanza su nueva APP, DENNYS agradecemos tu participación en el lanzamiento preliminar de la Aplicación.",
-			"imageUrl": "https://firebasestorage.googleapis.com/v0/b/clubifyec-b714e.appspot.com/o/Imagenes%20Notificaciones%2FHola.png?alt=media&token=ef6897ba-a0ba-446c-abc0-257ceee3e6f0"
+	"rules": {
+		"users": {
+			".read": true,
+			".write": true,
+			".indexOn": ["email"]
 		}
-	]
+	}
 }
